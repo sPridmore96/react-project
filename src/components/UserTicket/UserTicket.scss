@@ -1,12 +1,19 @@
 .container {
-
+width: 17em;
+height: 20rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 1rem;
+padding: 1rem;
+border: solid black 2px;
     &__id{
-
+        margin-left: -8rem;
     }
     &__name{
-
+        margin-top: 1rem;
     }
     &__role{
-        
+        margin-top: 0.5rem;
     }
 }
