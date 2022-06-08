@@ -1,16 +1,22 @@
+@use "../../sass/variables" as *;
 .button {
+    display: flex;
     align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 40px;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 30px;
     font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
 
     &--positive {
-        background-color: green;
+        
+        background-color: $color-green;
     }
 
     &--negative {
-        background-color: red;
+        background-color: $color-red;
     }
 }
 

@@ -1,13 +1,14 @@
+@use "../../sass/variables" as *;
+
 .count-container {
-    margin-top: 2rem;
-    width: 40%;
+    margin-top: 0.7rem;
+    width: 4rem;
     height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 35px;
-    border: solid black 2px;
-
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     &__header {
         margin-left: -4rem;
     }
@@ -18,18 +19,7 @@
         justify-content: space-evenly;
         width: 90%;
     }
-    
-    &__buttons-container {
-        width: 80%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
 }
-
-
 
 .button-container {
     width: 15rem;

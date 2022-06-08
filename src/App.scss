@@ -1,16 +1,39 @@
+@use "./sass/variables" as *;
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $font-primary;
 }
 
 .App {
     display: flex;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     width: 100vw;
+    height: auto;
     justify-content: center;
-    padding: 2rem;
-    margin-top: 2rem;
-    border: 2px black solid;
+    background-color: $color-dark;
+
+    
+    &__heading {
+        text-align: center;
+        padding: 1rem;
+        border: solid black 2px;
+        margin: 3rem auto;
+        width: 25rem;
+        border-radius: 20px;
+        text-decoration:underline dotted 4px $color-white;
+        background-color: $color-primary
+    }
+
+    &__content {
+        flex-wrap: wrap;
+        width: 99vw;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 }

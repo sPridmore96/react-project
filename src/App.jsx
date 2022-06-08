@@ -6,10 +6,16 @@ import UserTicket from './components/UserTicket/UserTicket';
 
 
 function App() {
-  return (
+  return (    
     <div className="App">
-      <UserTicket teamArr={team}/>
+      <div>
+    <h1 className='App__heading'>Ticket Tracker</h1>
     </div>
+    <div className='App__content' >
+      <UserTicket teamArr={team}/>
+      </div>
+    </div>
+
   );
 }
 
