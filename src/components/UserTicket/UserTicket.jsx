@@ -1,9 +1,15 @@
 import React from "react";
 import "./UserTicket.scss";
 import TicketCounter from "../TicketCounter/TicketCounter";
+import NewMember from "../NewMember/NewMember";
 
 const UserTicket = (props) => {
   const { teamArr} = props;
+
+  const addToTeamArr = () => {
+
+  }
+
 
   const teamJSX = teamArr.map((personObj) => {
     return (
@@ -18,6 +24,7 @@ const UserTicket = (props) => {
   return (
     <>
       {teamJSX}
+      <NewMember/>
     </>
   );
 };

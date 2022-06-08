@@ -1,25 +1,30 @@
-import React from 'react'
-import "./Buttons.scss"
-
-
+import React from "react";
+import "./Buttons.scss";
 
 const Buttons = (props) => {
+  const { handleClick, buttonType } = props;
 
-let {buttonStyle, ButtonText} = props
+  let buttonStyle = "button"
+    let buttonText = "+"
 
-    buttonStyle = "button"
-    ButtonText = "+"
-
-    if (props.buttonStyle) {
-        buttonStyle += " positive"
-    } else {
-        buttonStyle += " negative"
-        ButtonText = "-"
-    }
-
-  return (
-    <div><button className={buttonStyle}>{ButtonText}</button></div>
-  )
+if (buttonType) {
+    buttonStyle += " button--positive"
+    buttonText = "+"
+} else {
+    buttonStyle += " button--negative"
+    buttonText = "-"
 }
 
-export default Buttons
+  return (
+ 
+      <button
+        className={buttonStyle}
+        onClick={handleClick}
+      >
+        {buttonText}
+      </button>
+
+  );
+};
+
+export default Buttons;
