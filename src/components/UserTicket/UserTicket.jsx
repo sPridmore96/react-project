@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState, useTransition} from "react";
 import "./UserTicket.scss";
 import TicketCounter from "../TicketCounter/TicketCounter";
 import NewMember from "../NewMember/NewMember";
 
-const UserTicket = (props) => {
-  const { teamArr} = props;
+const UserTicket = ({teamArr}) => {
+  const [newCounter, setNewCounter] = useState(0)
+  const [newUser, setNewUser] = useState({})
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    let Name = `${event.target[0].value} ${event.target[1].value}` ;
+    let role = event.target[2].value;
+
+
+    setNewUser(teamArr.push( {
+      id: teamArr.length + 1,
+      name: Name,
+      role: role,
+    }))
+    event.target[0].value = ""
+    event.target[1].value = ""
+    event.target[2].value = ""
+  }
 
   const teamJSX = teamArr.map((personObj) => {
     return (
@@ -13,13 +30,13 @@ const UserTicket = (props) => {
         <h2 className="container__name">{personObj.name}</h2>
         <p className="container__role">{personObj.role}</p>
         <p className="container__count">Current Ticket Count :</p>
-        <TicketCounter/>
+        <TicketCounter />
         </div>
     );
   });
   return (
     <>
-    <NewMember/>
+    <NewMember handleSubmit={handleSubmit}/>
       {teamJSX}
     </>
   );

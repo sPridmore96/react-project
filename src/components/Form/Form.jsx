@@ -1,34 +1,34 @@
-import React, {useState} from 'react'
-import "./Form.scss"
+import React from "react";
+import Buttons from "../Buttons/Buttons";
+import "./Form.scss";
 
-
-
-const Form = () => {
-
-const [inputValue, setInputValue] = useState("")
-
-    const handleInput = (event) => {
-        event = event.target.value
-        setInputValue(event)
-    }
-    const handleSubmit = () => {
-        console.log("prick");
-    }
-
-
+const Form = ({ handleSubmit, handleClick }) => {
   return (
-    <form className="newMemForm" onSubmit={handleSubmit}>
-    <label htmlFor="first-name">Fist Name</label>
-    <input placeholder='First Name' id="first-name" onInput={handleInput} type="text" />
-    <label htmlFor="last-name">Last Name</label>
-    <input placeholder='Last Name' id="last-name" onInput={handleInput} type="text" />
-    <label htmlFor="role">Job Role</label>
-    <input placeholder='Role' id="role" onInput={handleInput} type="text" />
-    <label htmlFor="tickets">Pre-completed Tickets</label>
-    <input id="tickets" onInput={handleInput} type="number" />
-    <input id="submit" type="submit" value="submit" />
-  </form>
-  )
-}
+    
+    <form className="new-mem" onSubmit={handleSubmit}>
+          <h2>New Employee</h2>
+      <label htmlFor="first-name">Fist Name</label>
+      <input
+        placeholder="First Name"
+        name="firstName"
+        id="first-name"
+        type="text"
+      />
+      <label htmlFor="last-name">Last Name</label>
+      <input
+        placeholder="Last Name"
+        name="lastName"
+        id="last-name"
+        type="text"
+      />
+      <label htmlFor="role">Job Role</label>
+      <input placeholder="Role" id="role" name="role" type="text" />
+      <div className="new-mem__buttons">
+        <Buttons buttonType={true} />
+        <Buttons handleClick={handleClick} />
+      </div>
+    </form>
+  );
+};
 
-export default Form
+export default Form;

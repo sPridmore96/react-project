@@ -6,7 +6,7 @@ import Form from "../Form/Form";
 
 
 
-const NewMember = (props) => {
+const NewMember = ({handleSubmit}) => {
 
   const [showForm, setShowForm] = useState(false)
   
@@ -21,7 +21,7 @@ const NewMember = (props) => {
   </>
   const newUserJSX = 
   <>
-  <Form/>
+  <Form handleClick={handleClick} handleSubmit={handleSubmit}/>
   </>
   
 
